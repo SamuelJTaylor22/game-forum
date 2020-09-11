@@ -29,6 +29,7 @@ class PostsService {
 
   async delete(id, creatorEmail) {
     let success = await dbContext.Posts.findOneAndDelete({ _id: id, creatorEmail: creatorEmail })
+    await dbContext.Comment.deleteMany({ post: id })
     if (!success) {
       throw new BadRequest("Invalid id")
     }
