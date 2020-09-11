@@ -31,8 +31,6 @@
   </header>
   <main class="container-fluid">
     <div class="row">
-      <div class="col-6">
-        <div class="row">
             <div class="col-6">
                 <div class="row">
                     <ul class="col-12 list-group text-wrap scrollbox" id="postList">
@@ -67,30 +65,6 @@
                 <div id="activePost"></div>
             </div>
         </div>
-
-        <div class="row">
-          <div class="col-12 text-center">
-            <button class="btn btn-success" onclick="">Toggle Sort</button>
-            <!-- Needs function for Sort Toggle -->
-          </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <form class="form-inline" onsubmit="app.postsController.addPost(event)">
-          <div class="form-group">
-            <label for="newPost">New Post</label>
-            <input type="text" name="title" id="title" class="ml-1 form-control" placeholder="title"
-              aria-describedby="helpId">
-            <input type="text" name="body" id="body" class="form-control" placeholder="body" aria-describedby="helpId">
-            <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="image url"
-              aria-describedby="helpId">
-            <input type="text" name="category" id="category" class="form-control" placeholder="category"
-              aria-describedby="helpId">
-          </div>
-          <button type="submit" class="btn btn-success form-control">Submit!</button>
-        </form>
-        <div id="activePost"></div>
-        <div id="comments"></div>
       </div>
     </div>
   </main>
