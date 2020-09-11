@@ -13,7 +13,7 @@ class PostsService {
   }
   addPost(rawPost) {
     rawPost.user = ProxyState.user.email
-    api.post("posts",rawPost)
+    api.post("api/posts",rawPost)
     ProxyState.posts = [...ProxyState.posts, new Post(rawPost)]
   }
 }
