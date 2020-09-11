@@ -15,7 +15,7 @@ export default class Post {
   get Template() {
     return `
 
-    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this.title}')"><h1>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvotes.length()} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvotes.length()} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1></li>
+    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this.title}')"><h1>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvotes.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvotes.length} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1></li>
     `
   }
 

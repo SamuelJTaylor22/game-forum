@@ -6,7 +6,7 @@ import { commentsService } from "./CommentsService.js";
 class PostsService {
   async vote(bool, id) {
     let found = ProxyState.posts.find(p => p._id = id)
-    console.log(found)
+    
     if(bool){
         if(!found.upvotes.find(u => ProxyState.user.email)){
           found.upvotes.push(ProxyState.user.email)
@@ -27,6 +27,7 @@ class PostsService {
         found.downvotes.splice(index, 1)
       }
   }
+  console.log(found)
   }
   async deletePost(id) {
     console.log(id);
