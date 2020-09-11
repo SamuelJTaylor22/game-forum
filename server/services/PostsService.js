@@ -24,6 +24,7 @@ class PostsService {
     if (!update) {
       throw new BadRequest("Invalid id")
     }
+    return update
   }
 
   async delete(id) {
