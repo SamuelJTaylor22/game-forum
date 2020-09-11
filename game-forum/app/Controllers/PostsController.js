@@ -23,10 +23,10 @@ function _drawActive() {
 //Public
 export default class PostsController {
   constructor() {
-   AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, ()=>{
     ProxyState.on("posts", _draw);
     ProxyState.on("activePost", _drawActive);
     this.getPosts()
+   AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, ()=>{
     console.log(ProxyState.posts)
    })
     
@@ -64,5 +64,14 @@ export default class PostsController {
       console.error(error);
     }
 
+  }
+
+  vote(bool, id){
+    console.log("you voted");
+    try {
+      postsService.vote(bool, id)
+    } catch (error) {
+      
+    }
   }
 }
