@@ -21,7 +21,7 @@ export default class Post {
 
   get activeTemplate() {
     return `
-    <div class="card" style="height: 50%">
+    <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">${this.title} | ${this.creatorEmail}</h4>
                     <img class="card-img" src="${this.imgUrl}" alt="" style="">

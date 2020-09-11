@@ -10699,4 +10699,17 @@ main {
   flex-grow: 1;
 }
 
+.fa.fa-arrow-down{
+  color: red;
+}
+
+ .fa.fa-arrow-up{
+  color: forestgreen;
+}
+
+.scrollbox {
+  height: 88vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 /*# sourceMappingURL=main.css.map */
