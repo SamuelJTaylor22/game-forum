@@ -23,7 +23,7 @@ export default class Post{
     return `
     <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">${this.title} | ${this.creatorEmail}</h4>
+                    <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvotes} <i class="fa fa-arrow-up" aria-hidden="true"></i> | ${this.downvotes} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h4>
                     <img class="card-img" src="${this.imgUrl}" alt="" style="">
                     <p class="card-text">${this.body}</p>
                     <button type="button" class="btn btn-danger" onclick="app.postsController.deletePost('${this._id}')">Delete Post</button>
