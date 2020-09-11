@@ -7,6 +7,7 @@ class PostsService {
     console.log(id);
     let res = await api.delete(`api/posts/${id}`)
     console.log(res)
+    ProxyState.activePost= null
     this.getPosts()
   }
   async getPosts() {

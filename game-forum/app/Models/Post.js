@@ -15,7 +15,7 @@ export default class Post{
   get Template(){
     return `
 
-    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this.title}')"><h1>${this.category.toUpperCase()} | ${this.user} | ${this.title} | <span>${this.upvotes} <i class="fa fa-arrow-up" aria-hidden="true"></i> | ${this.downvotes} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1></li>
+    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this.title}')"><h1>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvotes} <i class="fa fa-arrow-up" aria-hidden="true"></i> | ${this.downvotes} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1></li>
     `
   }
 
@@ -23,7 +23,7 @@ export default class Post{
     return `
     <div class="card" style="height: 50%">
                   <div class="card-body">
-                    <h4 class="card-title">${this.title} | ${this.user}</h4>
+                    <h4 class="card-title">${this.title} | ${this.creatorEmail}</h4>
                     <img class="card-img" src="${this.imgUrl}" alt="" style="">
                     <p class="card-text">${this.body}</p>
 <button type="button" class="btn btn-primary" onclick="app.postsController.deletePost('${this._id}')">yeet</button>
