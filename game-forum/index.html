@@ -37,7 +37,18 @@
                 </div>
             </div>
             <div class="col-6">
-                <div id="ActivePost"></div>
+                <form class="form-inline" onsubmit="app.postsController.addPost(event)">
+                    <div class="form-group">
+                        <label for="newPost">New Post</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="title" aria-describedby="helpId">
+                        <input type="text" name="body" id="body" class="form-control" placeholder="body" aria-describedby="helpId">
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="image url" aria-describedby="helpId">
+                        <input type="text" name="category" id="category" class="form-control" placeholder="category" aria-describedby="helpId">
+                        <button type="submit" class="btn btn-success">bottom text</button>
+                        
+                    </div>
+                </form>
+                <div id="activePost"></div>
             </div>
         </div>
     </main>

@@ -2,8 +2,13 @@ import { ProxyState } from "../AppState.js";
 import Post from "../Models/Post.js";
 
 class PostsService {
-  addPost() {
-    ProxyState.posts = [...ProxyState.posts, new Post({ title: Math.random() })]
+  setPost(id) {
+    let foundpost = ProxyState.posts.find(p => p.title == id)
+    ProxyState.activePost = foundpost
+  }
+  addPost(rawPost) {
+
+    ProxyState.posts = [...ProxyState.posts, new Post(rawPost)]
   }
 }
 

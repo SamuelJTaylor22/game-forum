@@ -13,7 +13,13 @@ export default class Post{
 
   get Template(){
     return `
-    <li>
+    <li onclick="app.postsController.setPost('${this.title}')">${this.category} | ${this.title} | ${this.user} | ${this.upvotes}</li>
+    `
+  }
+
+  get activeTemplate(){
+    return `
+    this is the active post :) ${this.title}
     `
   }
 
