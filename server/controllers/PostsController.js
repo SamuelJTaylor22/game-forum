@@ -1,6 +1,7 @@
 import express from "express";
 import BaseController from "../utils/BaseController";
 import { postsService } from "../services/PostsService";
+import { commentsService } from "../services/CommentsService"
 import { Auth0Provider } from "@bcwdev/auth0provider";
 
 export class PostsController extends BaseController {
@@ -58,6 +59,7 @@ export class PostsController extends BaseController {
   async edit(req, res, next) {
     try {
       req.body.id = req.params.id
+      req.body.creatorEmail = req.userInfo.email
       let data = await postsService.edit(req.body)
       res.send(data)
     } catch (error) {
@@ -67,7 +69,7 @@ export class PostsController extends BaseController {
 
   async delete(req, res, next) {
     try {
-      let data = await postsService.delete(req.params.id)
+      let data = await postsService.delete(req.params.id, req.userInfo.email)
       res.send("Successfully deleted")
     } catch (error) {
       next(error)
