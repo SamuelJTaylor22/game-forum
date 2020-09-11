@@ -16,7 +16,7 @@ export default class CommentsController {
   constructor() {
     AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, () => {
       ProxyState.on("comments", _draw);
-      this.getComments()
+      // ProxyState.on("activePost", _draw)
       console.log(ProxyState.comments)
     })
   }

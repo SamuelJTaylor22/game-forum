@@ -1,13 +1,15 @@
 import { ProxyState } from "../AppState.js";
 import Post from "../Models/Post.js";
 import { api } from "./AxiosService.js";
+import { commentsService } from "./CommentsService.js";
 
 class PostsService {
   async deletePost(id) {
     console.log(id);
     let res = await api.delete(`api/posts/${id}`)
     console.log(res)
-    ProxyState.activePost= null
+    ProxyState.activePost = null
+    ProxyState.comments = []
     this.getPosts()
   }
   async getPosts() {
@@ -17,10 +19,11 @@ class PostsService {
   setPost(id) {
     let foundpost = ProxyState.posts.find(p => p.title == id)
     ProxyState.activePost = foundpost
+    commentsService.getComments()
   }
   async addPost(rawPost) {
     rawPost.user = ProxyState.user.email
-    await api.post("api/posts",rawPost)
+    await api.post("api/posts", rawPost)
     this.getPosts()
   }
 }
