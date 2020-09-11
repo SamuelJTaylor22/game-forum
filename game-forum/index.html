@@ -28,21 +28,27 @@
         </nav>
     </header>
     <main class="container-fluid">
-        <div class="row my-3">
-            <div class="col-5">
-                <div class="card p-2 skeleton-loader">
-                    <div class="card-title p-2">
-                        <div class="d-flex align-items-center">
-                            <div class="skeleton-loader avatar"></div>
-                            <div class="skeleton-loader text mx-2"></div>
-                        </div>
-                    </div>
-                    <div class="card-body border-top">
-                        <div class="skeleton-loader text block"></div>
-                        <div class="skeleton-loader text block"></div>
-                        <div class="skeleton-loader text"></div>
-                    </div>
+        <div class="row">
+            <div class="col-6">
+                <div >
+                    <ul id="postList">
+
+                    </ul>
                 </div>
+            </div>
+            <div class="col-6">
+                <form class="form-inline" onsubmit="app.postsController.addPost(event)">
+                    <div class="form-group">
+                        <label for="newPost">New Post</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="title" aria-describedby="helpId">
+                        <input type="text" name="body" id="body" class="form-control" placeholder="body" aria-describedby="helpId">
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="image url" aria-describedby="helpId">
+                        <input type="text" name="category" id="category" class="form-control" placeholder="category" aria-describedby="helpId">
+                        <button type="submit" class="btn btn-success">bottom text</button>
+                        
+                    </div>
+                </form>
+                <div id="activePost"></div>
             </div>
         </div>
     </main>
