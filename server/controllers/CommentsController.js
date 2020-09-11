@@ -7,7 +7,7 @@ export class CommentsController extends BaseController {
   constructor() {
     super("api/comments");
     this.router
-      .get("/:id", this.getById)
+      .get("", this.getAll)
       // NOTE: Beyond this point all routes require Authorization tokens (the user must be logged in)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post("", this.create)
@@ -18,15 +18,6 @@ export class CommentsController extends BaseController {
   async getAll(req, res, next) {
     try {
       let data = await commentsService.find(req.query)
-      res.send(data)
-    } catch (error) {
-      next(error)
-    }
-  }
-
-  async getById(req, res, next) {
-    try {
-      let data = await commentsService.findById(req.params.id)
       res.send(data)
     } catch (error) {
       next(error)
