@@ -3,18 +3,24 @@ import Post from "../Models/Post.js";
 import { api } from "./AxiosService.js";
 
 class PostsService {
-  getPosts() {
-    let res = api.get("api/posts")
-    ProxyState.posts = res.map(p => new Post(p))
+  async deletePost(id) {
+    console.log(id);
+    let res = await api.delete(`api/posts/${id}`)
+    console.log(res)
+    this.getPosts()
+  }
+  async getPosts() {
+    let res = await api.get("api/posts")
+    ProxyState.posts = res.data.map(p => new Post(p))
   }
   setPost(id) {
     let foundpost = ProxyState.posts.find(p => p.title == id)
     ProxyState.activePost = foundpost
   }
-  addPost(rawPost) {
+  async addPost(rawPost) {
     rawPost.user = ProxyState.user.email
-    api.post("posts",rawPost)
-    ProxyState.posts = [...ProxyState.posts, new Post(rawPost)]
+    await api.post("api/posts",rawPost)
+    this.getPosts()
   }
 }
 

@@ -26,8 +26,8 @@ export default class PostsController {
    AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, ()=>{
     ProxyState.on("posts", _draw);
     ProxyState.on("activePost", _drawActive);
-    _draw()
-    console.log(ProxyState.user)
+    this.getPosts()
+    console.log(ProxyState.posts)
    })
     
   }
@@ -55,5 +55,14 @@ export default class PostsController {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  deletePost(id){
+    try {
+      postsService.deletePost(id)
+    } catch (error) {
+      console.error(error);
+    }
+
   }
 }
