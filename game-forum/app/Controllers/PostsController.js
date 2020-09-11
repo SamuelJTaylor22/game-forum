@@ -48,4 +48,12 @@ export default class PostsController {
   setPost(id){
     postsService.setPost(id)
   }
+
+  getPosts(){
+    try {
+      postsService.getPosts()
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
