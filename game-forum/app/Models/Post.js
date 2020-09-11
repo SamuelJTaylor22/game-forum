@@ -26,7 +26,7 @@ export default class Post {
                     <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvotes} <i class="fa fa-arrow-up" aria-hidden="true"></i> | ${this.downvotes} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h4>
                     <img class="card-img" src="${this.imgUrl}" alt="" style="">
                     <p class="card-text">${this.body}</p>
-                    <button type="button" class="btn btn-primary" onclick="app.postsController.deletePost('${this._id}')">yeet</button>
+                    <button type="button" class="btn btn-primary" onclick="app.postsController.deletePost('${this._id}')">Delete!</button>
                     <form class="form-inline my-1" onsubmit="app.commentsController.addComment(event)">
           <div class="form-group">
             <input type="text" name="comment" id="comment" class="ml-1 form-control" placeholder="Leave comment"
