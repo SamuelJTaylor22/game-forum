@@ -5,7 +5,7 @@ export default class Post{
     this.user = data.user
     this.category = data.category || "misc"
     this.body = data.body
-    this.imgUrl = data.imgUrl || "placehold.it/200x200"
+    this.imgUrl = data.imgUrl || "//placehold.it/600x200"
     this.upvotes = data.upvotes || 0
     this.downvotes = data.downvotes || 0
   }
@@ -13,13 +13,19 @@ export default class Post{
 
   get Template(){
     return `
-    <li onclick="app.postsController.setPost('${this.title}')">${this.category} | ${this.title} | ${this.user} | ${this.upvotes}</li>
+    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this.title}')"><h1>${this.category.toUpperCase()} | ${this.user} | ${this.title} | <span>${this.upvotes} <i class="fa fa-arrow-up" aria-hidden="true"></i> | ${this.downvotes} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1></li>
     `
   }
 
   get activeTemplate(){
     return `
-    this is the active post :) ${this.title}
+    <div class="card" style="height: 50%">
+                  <div class="card-body">
+                    <h4 class="card-title">${this.title} | ${this.user}</h4>
+                    <img class="card-img" src="${this.imgUrl}" alt="" style="">
+                    <p class="card-text">${this.body}</p>
+                  </div>
+    </div>
     `
   }
 

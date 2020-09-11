@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="assets/style/main.css">
     <title>game-forum</title>
 </head>
@@ -30,23 +31,29 @@
     <main class="container-fluid">
         <div class="row">
             <div class="col-6">
-                <div >
-                    <ul id="postList">
-
+                <div class="row">
+                    <ul class="col-12 list-group text-wrap" id="postList">
+                        
                     </ul>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-success" onclick="">Toggle Sort</button>
+                        <!-- Needs function for Sort Toggle -->
+                    </div>
                 </div>
             </div>
             <div class="col-6">
                 <form class="form-inline" onsubmit="app.postsController.addPost(event)">
                     <div class="form-group">
                         <label for="newPost">New Post</label>
-                        <input type="text" name="title" id="title" class="form-control" placeholder="title" aria-describedby="helpId">
+                        <input type="text" name="title" id="title" class="ml-1 form-control" placeholder="title" aria-describedby="helpId">
                         <input type="text" name="body" id="body" class="form-control" placeholder="body" aria-describedby="helpId">
                         <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="image url" aria-describedby="helpId">
                         <input type="text" name="category" id="category" class="form-control" placeholder="category" aria-describedby="helpId">
-                        <button type="submit" class="btn btn-success">bottom text</button>
-                        
                     </div>
+                    <button type="submit" class="btn btn-success form-control">Submit!</button>
                 </form>
                 <div id="activePost"></div>
             </div>
