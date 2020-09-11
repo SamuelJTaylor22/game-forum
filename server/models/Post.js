@@ -22,4 +22,4 @@ Post.virtual("creator", {
   justOne: true
 });
 
-export default Value;
+export default Post;
