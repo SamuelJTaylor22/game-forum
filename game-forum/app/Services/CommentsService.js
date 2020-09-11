@@ -12,8 +12,8 @@ class CommentsService {
   }
 
   async getComments() {
-    let res = await api.get("api/posts")
-    ProxyState.posts = res.data.map(p => new Comment(p))
+    let res = await api.get(`api/posts/${ProxyState.activePost._id}/comments`)
+    ProxyState.comments = res.data.map(c => new Comment(c))
   }
 
   async addComment(rawComment) {

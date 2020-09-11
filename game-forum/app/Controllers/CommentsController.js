@@ -5,10 +5,10 @@ import { commentsService } from "../Services/CommentsService.js";
 
 //Private
 function _draw() {
-  let comments = ProxyState.comments;
+  let comments = ProxyState.comments
   let template = ''
-  comments.forEach(p => template += p.Template)
-  document.getElementById(" ").innerHTML = template
+  comments.forEach(c => template += c.Template)
+  document.getElementById("comments").innerHTML = template
 }
 
 //Public
@@ -23,15 +23,14 @@ export default class CommentsController {
 
   addComment(event) {
     event.preventDefault()
-    let e = event.target
-    let rawComment = { title: e.title.value, body: e.body.value, imgUrl: e.imgUrl.value, category: e.category.value }
+    let form = event.target
+    let rawComment = { body: form.comment.value, post: ProxyState.activePost._id }
 
     try {
       commentsService.addComment(rawComment)
     } catch (error) {
       console.error(error)
     }
-    e.reset()
   }
 
   getComments() {
