@@ -5,7 +5,7 @@ const ObjectId = Schema.Types.ObjectId
 const Comment = new Schema(
   {
     body: { type: String, required: true },
-    user: { type: ObjectId, ref: "User", required: true },
+    creatorEmail: { type: String, required: true },
     post: { type: ObjectId, ref: "Post", required: true },
     upvote: { type: Number, required: false, default: 0 },
     downvote: { type: Number, required: false, default: 0 },
