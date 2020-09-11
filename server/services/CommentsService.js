@@ -3,17 +3,10 @@ import { BadRequest } from "../utils/Errors";
 
 class CommentsService {
   async find(query = {}) {
-    let comments = await dbContext.Comment.find(query).populate("creator", "name picture")
+    let comments = await dbContext.Comment.find(query).populate("creator", "name picture").populate("post", "title")
     return comments
   }
 
-  async findById(id) {
-    let comment = await dbContext.Comment.findById(id)
-    if (!comment) {
-      throw new BadRequest("Invalid Id")
-    }
-    return comment
-  }
 
   async create(body) {
     return await dbContext.Comment.create(body)

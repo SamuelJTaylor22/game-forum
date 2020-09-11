@@ -24,15 +24,6 @@ export class CommentsController extends BaseController {
     }
   }
 
-  async getById(req, res, next) {
-    try {
-      let data = await commentsService.findById(req.params.id)
-      res.send(data)
-    } catch (error) {
-      next(error)
-    }
-  }
-
   async create(req, res, next) {
     try {
       // NOTE NEVER TRUST THE CLIENT TO ADD THE CREATOR ID

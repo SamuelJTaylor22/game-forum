@@ -10,7 +10,7 @@ const Post = new Schema(
     img: { type: String, required: false, default: "//placehold.it/200x200" },
     upvote: { type: Number, required: false, default: 0 },
     downvote: { type: Number, required: false, default: 0 },
-    category: { type: String, required: true, default: "Misc" }
+    category: { type: String, required: true, enum:["raid", "dngn", "pvp", "quest","farm","lore","misc"], default: "misc" }
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );
