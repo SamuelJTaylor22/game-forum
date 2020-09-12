@@ -50,4 +50,13 @@ export default class CommentsController {
     }
 
   }
+  vote(bool, pId, cId) {
+    window.event.stopPropagation()
+    console.log("you voted");
+    try {
+      commentsService.vote(bool, pId, cId)
+    } catch (error) {
+
+    }
+  }
 }
