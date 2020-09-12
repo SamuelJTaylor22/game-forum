@@ -30,6 +30,8 @@ class PostsService {
       }
     }
     console.log(found)
+    ProxyState.posts = ProxyState.posts
+    ProxyState.activePost = ProxyState.activePost
   }
   async deletePost(id) {
     console.log(id);
