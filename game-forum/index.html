@@ -11,6 +11,8 @@
   <title>game-forum</title>
 </head>
 
+<!-- Hey guys, sam here. Slack notifications automatically disable at 9pm, so I just thought I'd let you guys know that I found a bug. Users upvotes do not save unless they are the account that created the post. -->
+
 <body>
 
 
@@ -57,26 +59,29 @@
         </div>
       </div>
       <div class="col-8">
-        <form class="row bg-swhite" onsubmit="app.postsController.addPost(event)">
-          <label for="newPost">
-            <h1> New Post</h1>
-          </label>
-          <input type="text" name="title" id="title" class="form-control" placeholder="Title..."
-            aria-describedby="helpId">
-          <input type="text" name="body" id="body" class="form-control" placeholder="Body..." aria-describedby="helpId">
-          <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Image URL"
-            aria-describedby="helpId">
-          <select class="form-control" name="category" id="category">
-            <option value="raid">Raid</option>
-            <option value="dngn">Dungeon</option>
-            <option value="pvp">PvP</option>
-            <option value="quest">Quest</option>
-            <option value="farm">Farm/Collect</option>
-            <option value="lore">Lore</option>
-            <option value="misc">Misc</option>
-          </select>
-          <button type="submit" class="btn btn-blue form-control">Submit!</button>
-        </form>
+        <div class="card bg-swhite my-1">
+          <form class="m-2 text-center" onsubmit="app.postsController.addPost(event)">
+            <label for="newPost">
+              <h1 class="card-head"> New Post</h1>
+            </label>
+            <input type="text" name="title" id="title" class="form-control mb-1" placeholder="Title..."
+              aria-describedby="helpId">
+            <input type="text" name="body" id="body" class="form-control mb-1" placeholder="Body..." aria-describedby="helpId">
+            <input type="text" name="imgUrl" id="imgUrl" class="form-control mb-1" placeholder="Image URL"
+              aria-describedby="helpId">
+            <select class="form-control mb-1" name="category" id="category">
+              <option value="raid">Raid</option>
+              <option value="dngn">Dungeon</option>
+              <option value="pvp">PvP</option>
+              <option value="quest">Quest</option>
+              <option value="farm">Farm/Collect</option>
+              <option value="lore">Lore</option>
+              <option value="misc">Misc</option>
+            </select>
+            <button type="submit" class="btn btn-darkblue form-control">Submit!</button>
+          </form>
+        </div>
+
         <div class="scrollbox-small" id="activePost"></div>
       </div>
     </div>
