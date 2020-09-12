@@ -5,9 +5,15 @@ import { postsService } from "../Services/PostsService.js";
 
 //Private
 function _draw() {
-  let posts = ProxyState.posts;
+  let activeposts = []
   let template = ''
-  posts.forEach(p => template += p.Template)
+  for (let i = 0; i < ProxyState.posts.length; i++) {
+    const post = ProxyState.posts[i];
+    if (post.display== true) {
+      activeposts.push(post)
+    }
+  }
+  activeposts.forEach(p => template += p.Template)
   document.getElementById("postList").innerHTML = template
 }
 
@@ -88,6 +94,14 @@ export default class PostsController {
       postsService.sort()
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  filterCategorys(category){
+    try {
+      postsService.filterCategorys(category)
+    } catch (error) {
+      console.error(error);
     }
   }
 }

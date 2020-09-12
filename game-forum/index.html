@@ -12,23 +12,35 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-        <span class="ml-2">game-forum</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+
+
+  <header class="container-fluid">
+    <div class="row">
+      <nav class="col navbar navbar-dark navbar-expand bg-dark text-light d-flex justify-content-between">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+          <span class="ml-2">game-forum</span>
+        </a>
+
+
+        <div>
+          <button onclick="app.postsController.filterCategorys('raid')" class="btn btn-primary bg-dark">category</button>
+          <button onclick="app.postsController.filterCategorys('dngn')" class="btn btn-primary bg-dark">category</button>
+          <button onclick="app.postsController.filterCategorys('pvp')" class="btn btn-primary bg-dark">category</button>
+          <button onclick="app.postsController.filterCategorys('quest')" class="btn btn-primary bg-dark">category</button>
+          <button onclick="app.postsController.filterCategorys('farm')" class="btn btn-primary bg-dark">category</button>
+          <button onclick="app.postsController.filterCategorys('lore')" class="btn btn-primary bg-dark">category</button>
+          <button onclick="app.postsController.filterCategorys('misc')" class="btn btn-primary bg-dark">category</button>
         </div>
-      </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-    </nav>
+
+
+
+        <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
+      </nav>
+    </div>
   </header>
+
+
   <main class="container-fluid">
     <div class="row">
       <div class="col-6">
@@ -36,11 +48,21 @@
           <ul class="col-12 list-group text-wrap scrollbox" id="postList">
 
           </ul>
+<<<<<<< HEAD
+=======
         </div>
 
         <div class="row">
           <div class="col-12 text-center py-1">
             <button class="btn btn-success" onclick="app.postsController.sort()">Toggle Sort</button>
+            <!-- Needs function for Sort Toggle -->
+          </div>
+>>>>>>> 22e247fdf2c2eec7e3bd869de285d0c9831169f1
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center py-1">
+            <button class="btn btn-success" onclick="">Toggle Sort</button>
             <!-- Needs function for Sort Toggle -->
           </div>
         </div>
@@ -68,6 +90,31 @@
         </form>
         <div class="scrollbox-small" id="activePost"></div>
       </div>
+      <div class="col-6 scrollbox">
+        <form class="row" onsubmit="app.postsController.addPost(event)">
+          <label for="newPost">
+            <h1>New Post</h1>
+          </label>
+          <input type="text" name="title" id="title" class="form-control" placeholder="Title..."
+            aria-describedby="helpId">
+          <input type="text" name="body" id="body" class="form-control" placeholder="Body..." aria-describedby="helpId">
+          <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Image URL"
+            aria-describedby="helpId">
+          <select class="form-control" name="category" id="category">
+            <option value="raid">Raid</option>
+            <option value="dngn">Dungeon</option>
+            <option value="pvp">PvP</option>
+            <option value="quest">Quest</option>
+            <option value="farm">Farm/Collect</option>
+            <option value="lore">Lore</option>
+            <option value="misc">Misc</option>
+          </select>
+          <button type="submit" class="btn btn-success form-control">Submit!</button>
+        </form>
+        <div id="activePost"></div>
+      </div>
+    </div>
+    </div>
     </div>
     </div>
     </div>
