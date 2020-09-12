@@ -46,6 +46,7 @@ export default class PostsController {
   }
 
   setPost(id){
+    debugger
     postsService.setPost(id)
   }
 

@@ -5,7 +5,7 @@ export default class Post {
     this.creatorEmail = data.creatorEmail
     this.category = data.category || "misc"
     this.body = data.body
-    this.imgUrl = data.imgUrl || "//placehold.it/600x200"
+    this.img = data.img || "//placehold.it/600x200"
     this.upvote = data.upvote || []
     this.downvote = data.downvote || []
     this._id = data._id
@@ -15,7 +15,7 @@ export default class Post {
   get Template() {
     return `
 
-    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this.title}')"><h1>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h1></li>
+    <li class="border border-primary px-2 list-group-item" onclick="app.postsController.setPost('${this._id}')"><h1>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h1></li>
     `
   }
 
@@ -24,7 +24,7 @@ export default class Post {
     <div class="card">
         <div class="card-body">
           <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h4>
-          <img class="card-img" src="${this.imgUrl}" alt="" style="">
+          <img class="card-img" src="${this.img}" alt="" style="">
           <p class="card-text">${this.body}</p>
           <button type="button" class="btn btn-danger" onclick="app.postsController.deletePost('${this._id}')">Delete Post</button>
         <form class="form-inline my-1" onsubmit="app.commentsController.addComment(event)">

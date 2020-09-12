@@ -47,7 +47,7 @@ class PostsService {
     ProxyState.posts = res.data.map(p => new Post(p))
   }
   setPost(id) {
-    let foundpost = ProxyState.posts.find(p => p.title == id)
+    let foundpost = ProxyState.posts.find(p => p._id == id)
     ProxyState.activePost = foundpost
     commentsService.getComments()
   }
