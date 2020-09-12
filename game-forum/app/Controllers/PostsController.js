@@ -5,9 +5,15 @@ import { postsService } from "../Services/PostsService.js";
 
 //Private
 function _draw() {
-  let posts = ProxyState.posts;
+  let activeposts = []
   let template = ''
-  posts.forEach(p => template += p.Template)
+  for (let i = 0; i < ProxyState.posts.length; i++) {
+    const post = ProxyState.posts[i];
+    if (post.display == true) {
+      activeposts.push(post)
+    }
+  }
+  activeposts.forEach(p => template += p.Template)
   document.getElementById("postList").innerHTML = template
 }
 
@@ -33,8 +39,8 @@ export default class PostsController {
   addPost(event) {
     event.preventDefault()
     let e = event.target
-    let rawPost = {title: e.title.value, body: e.body.value, img:e.imgUrl.value, category: e.category.value}
-    
+    let rawPost = { title: e.title.value, body: e.body.value, img: e.imgUrl.value, category: e.category.value }
+
     try {
       postsService.addPost(rawPost)
     } catch (error) {
@@ -43,8 +49,8 @@ export default class PostsController {
     e.reset()
   }
 
-  setPost(id){
-    
+  setPost(id) {
+
     postsService.setPost(id)
   }
 
@@ -83,11 +89,19 @@ export default class PostsController {
     }
   }
 
-  sort() {
+  sortByDownvote() {
     try {
-      postsService.sort()
+      postsService.sortByDownvote()
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  filterCategorys(category) {
+    try {
+      postsService.filterCategorys(category)
+    } catch (error) {
+      console.error(error);
     }
   }
 }

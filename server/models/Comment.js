@@ -7,8 +7,8 @@ const Comment = new Schema(
     body: { type: String, required: true },
     creatorEmail: { type: String, required: true },
     post: { type: ObjectId, ref: "Post", required: true },
-    upvote: { type: Array, required: false, default: [] },
-    downvote: { type: Array, required: false, default: [] },
+    upvote: [{ type: String}],
+    downvote: [{ type: String}],
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );

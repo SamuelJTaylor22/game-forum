@@ -65,8 +65,15 @@ class PostsService {
     console.log(ProxyState.posts)
   }
 
-  sort() {
+  sortByDownvote() {
     ProxyState.posts.reverse()
+    ProxyState.posts = ProxyState.posts
+  }
+  filterCategorys(category) {
+    let active = ProxyState.posts.find(p => p.category == category)
+    if (active.display) {
+      active.display = false
+    } else active.display = true
     ProxyState.posts = ProxyState.posts
   }
 }
