@@ -9,7 +9,7 @@ export default class Post {
     this.upvote = data.upvote || []
     this.downvote = data.downvote || []
     this._id = data._id
-    this.display = data.display
+    this.display = data.display || true
   }
 
 
