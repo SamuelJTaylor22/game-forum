@@ -5,7 +5,7 @@ import { commentsService } from "./CommentsService.js";
 
 class PostsService {
   async vote(bool, id) {
-    let found = ProxyState.posts.find(p => p._id = id)
+    let found = ProxyState.posts.find(p => p._id == id)
 
     if (bool) {
       if (!found.upvote.find(u => u == ProxyState.user.email)) {
