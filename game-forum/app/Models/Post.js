@@ -34,7 +34,9 @@ export default class Post {
           </div>
           <button type="submit" class="btn btn-warning form-control ml-2"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Comment</button>
         </form>
-        </div> 
+        </div>
+        <ul id="comments">
+        </ul>
     </div>
     `
   }
