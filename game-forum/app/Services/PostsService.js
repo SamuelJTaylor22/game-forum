@@ -8,14 +8,14 @@ class PostsService {
     let found = ProxyState.posts.find(p => p._id = id)
     
     if(bool){
-        if(!found.upvote.find(u => ProxyState.user.email)){
-          found.upvote.push(ProxyState.user.email)
-          await api.put(`api/posts/${id}`, found)
-        }
-        else{
-          let index = found.upvote.findIndex(u => ProxyState.user.email)
-          found.upvote.splice(index, 1)
-        }
+      if(!found.upvote.find(u => ProxyState.user.email)){
+        found.upvote.push(ProxyState.user.email)
+        await api.put(`api/posts/${id}`, found)
+      }
+      else{
+        let index = found.upvote.findIndex(u => ProxyState.user.email)
+        found.upvote.splice(index, 1)
+      }
     }
     else{
       if(!found.downvote.find(u => ProxyState.user.email)){
@@ -26,8 +26,8 @@ class PostsService {
         let index = found.downvote.findIndex(u => ProxyState.user.email)
         found.downvote.splice(index, 1)
       }
-  }
-  console.log(found)
+    }
+    console.log(found)
   }
   async deletePost(id) {
     console.log(id);
@@ -51,6 +51,13 @@ class PostsService {
     rawPost.user = ProxyState.user.email
     await api.post("api/posts", rawPost)
     this.getPosts()
+  }
+  filterCategorys(category) {
+    let active = ProxyState.posts.find(p=> p.category == category)
+    if(active.display){
+      active.display = false
+    }else active.display = true
+    ProxyState.posts = ProxyState.posts
   }
 }
 
