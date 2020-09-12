@@ -4,8 +4,8 @@ export default class Comment {
     this.post = data.post
     this.user = data.user
     this.body = data.body
-    this.upvotes = data.upvotes || 0
-    this.downvotes = data.downvotes || 0
+    this.upvote = data.upvote || []
+    this.downvote = data.downvote || []
   }
 
   get Template() {
