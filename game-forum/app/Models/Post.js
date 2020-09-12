@@ -9,6 +9,7 @@ export default class Post {
     this.upvote = data.upvote || []
     this.downvote = data.downvote || []
     this._id = data._id
+    this.totalScore = data.upvote.length - data.downvote.length
   }
 
 
