@@ -37,7 +37,7 @@ export default class Post {
         </form>
         </div>
         <div class="text-center my-2">
-          <button class="btn btn-blue" onclick="app.commentsController.sortByDownvotes()" style="width: 15%">Comment Sort</button>
+          <button class="btn btn-success" onclick="app.commentsController.sortByDownvote()" style="width: 15%">Comment Sort</button>
         </div>
         <ul id="comments">
         </ul>
