@@ -11,7 +11,7 @@ export default class Comment {
 
   get Template() {
     return `
-      <h1 class="border border-primary">${this.creatorEmail} | ${this.body} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true"></i>  ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.commentsController.vote(false, '${this.post._id}', '${this._id}')"></i></span></h1>
+      <h1 class="border border-primary">${this.creatorEmail} | ${this.body} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.commentsController.vote(true, '${this._id}')"></i>  ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.commentsController.vote(false, '${this._id}')"></i></span></h1>
     `
   }
 
