@@ -10742,10 +10742,17 @@ main {
 .btn-syellow{
   color: var(--swhite);
   background-color: var(--syellow);
-  border-color: var(--slyellow);
+  border-color: var(--darkblue);
 }
 
 .bg-swhite{
   background-color: var(--swhite);
 }
+
+.btn-slyellow{
+  color: var(--darkblue);
+  background-color: var(--slyellow);
+  border-color: var(--darkblue);
+}
+
 /*# sourceMappingURL=main.css.map */
