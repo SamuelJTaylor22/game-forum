@@ -25,13 +25,13 @@
 
 
         <div>
-          <button onclick="app.postsController.filterCategorys('raid')" class="btn btn-darkblue">Raid</button>
-          <button onclick="app.postsController.filterCategorys('dngn')" class="btn btn-darkblue">Dungeon</button>
-          <button onclick="app.postsController.filterCategorys('pvp')" class="btn btn-darkblue">PvP</button>
-          <button onclick="app.postsController.filterCategorys('quest')" class="btn btn-darkblue">Quest</button>
-          <button onclick="app.postsController.filterCategorys('farm')" class="btn btn-darkblue">Farm</button>
-          <button onclick="app.postsController.filterCategorys('lore')" class="btn btn-darkblue">Lore</button>
-          <button onclick="app.postsController.filterCategorys('misc')" class="btn btn-darkblue">Misc</button>
+          <button onclick="app.postsController.filterCategorys('raid')" class="btn-lg btn-darkblue">Raid</button>
+          <button onclick="app.postsController.filterCategorys('dngn')" class="btn-lg btn-darkblue">Dungeon</button>
+          <button onclick="app.postsController.filterCategorys('pvp')" class="btn-lg btn-darkblue">PvP</button>
+          <button onclick="app.postsController.filterCategorys('quest')" class="btn-lg btn-darkblue">Quest</button>
+          <button onclick="app.postsController.filterCategorys('farm')" class="btn-lg btn-darkblue">Farm</button>
+          <button onclick="app.postsController.filterCategorys('lore')" class="btn-lg btn-darkblue">Lore</button>
+          <button onclick="app.postsController.filterCategorys('misc')" class="btn-lg btn-darkblue">Misc</button>
         </div>
 
 
@@ -44,50 +44,46 @@
 
   <main class="container-fluid">
     <div class="row">
-      <div class="col-4">
-        <div class="row">
+      <div class="col-4 bg-swhite">
+        <div class="text-center py-1">
+          <button class="btn btn-blue" onclick="app.postsController.sortByDownvote()">Sort Posts</button>
+        </div>
+        <div class="">
           <ul class="col-12 list-group text-wrap scrollbox" id="postList">
-
           </ul>
         </div>
 
-        <div class="row">
-          <div class="col-12 text-center py-1">
-            <button class="btn btn-blue" onclick="app.postsController.sortByDownvote()">Sort Posts</button>
-            <!-- Needs function for Sort Toggle -->
-          </div>
-        </div>
+
       </div>
       <div class="col-8">
-        <div class="card bg-swhite my-1">
-          <form class="m-2 text-center" onsubmit="app.postsController.addPost(event)">
-            <label for="newPost">
-              <h1 class="card-head"> New Post</h1>
-            </label>
-            <input type="text" name="title" id="title" class="form-control mb-1" placeholder="Title..."
-              aria-describedby="helpId">
-            <input type="text" name="body" id="body" class="form-control mb-1" placeholder="Body..." aria-describedby="helpId">
-            <input type="text" name="imgUrl" id="imgUrl" class="form-control mb-1" placeholder="Image URL"
-              aria-describedby="helpId">
-            <select class="form-control mb-1" name="category" id="category">
-              <option value="raid">Raid</option>
-              <option value="dngn">Dungeon</option>
-              <option value="pvp">PvP</option>
-              <option value="quest">Quest</option>
-              <option value="farm">Farm/Collect</option>
-              <option value="lore">Lore</option>
-              <option value="misc">Misc</option>
-            </select>
-            <button type="submit" class="btn btn-blue form-control">Submit!</button>
-          </form>
-        </div>
+        <div class="col-8 offset-2">
+          <div class="card bg-swhite my-1 shadow">
+            <form class="m-2 text-center" onsubmit="app.postsController.addPost(event)">
+              <label for="newPost">
+                <h1 class="card-head"> New Post</h1>
+              </label>
+              <input type="text" name="title" id="title" class="form-control mb-1" placeholder="Title..."
+                aria-describedby="helpId">
+              <input type="text" name="body" id="body" class="form-control mb-1" placeholder="Body..."
+                aria-describedby="helpId">
+              <input type="text" name="imgUrl" id="imgUrl" class="form-control mb-1" placeholder="Image URL"
+                aria-describedby="helpId">
+              <select class="form-control mb-1" name="category" id="category">
+                <option value="raid">Raid</option>
+                <option value="dngn">Dungeon</option>
+                <option value="pvp">PvP</option>
+                <option value="quest">Quest</option>
+                <option value="farm">Farm/Collect</option>
+                <option value="lore">Lore</option>
+                <option value="misc">Misc</option>
+              </select>
+              <button type="submit" class="btn btn-blue form float-right">Submit!</button>
+            </form>
+          </div>
 
+        </div>
         <div class="scrollbox-small" id="activePost"></div>
       </div>
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
   </main>
   <footer class="container-fluid bg-darkblue text-swhite">

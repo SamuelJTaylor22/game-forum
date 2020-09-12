@@ -15,14 +15,15 @@ export default class Post {
 
   get Template() {
     return `
-
-    <li class="border border-primary px-2 list-group-item bg-swhite" onclick="app.postsController.setPost('${this._id}')"><h2>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h2></li>
+    <div class="card mt-1 ml-1">
+    <li class="border border-primary px-2 list-group-item bg-white" onclick="app.postsController.setPost('${this._id}')"><h2>${this.category.toUpperCase()} | ${this.creatorEmail} | ${this.title} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h2></li>
+    </div>
     `
   }
 
   get activeTemplate() {
     return `
-    <div class="card bg-swhite">
+    <div class="card bg-swhite shadow m-3">
         <div class="card-body">
           <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h4>
           <img class="card-img" src="${this.img}" alt="" style="">
