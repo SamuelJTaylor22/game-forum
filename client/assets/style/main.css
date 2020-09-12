@@ -40,6 +40,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.stext{
+  font-family: 'Orbitron', sans-serif;
+}
+
 *,
 *::before,
 *::after {
