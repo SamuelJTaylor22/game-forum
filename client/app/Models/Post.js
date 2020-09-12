@@ -15,9 +15,20 @@ export default class Post {
 
   get Template() {
     return `
-    <div class="card mt-1 ml-1">
-    <li class="border border-primary px-2 list-group-item bg-white d-flex flex-direction-column justify-content-between" onclick="app.postsController.setPost('${this._id}')"><h2>${this.category.toUpperCase()}|</h2> <h6 class="align-self-center"> ${this.creatorEmail} | ${this.title}  </h6><span class="align-self-center">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true"></i> ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></li>
-    </div>
+  <div class="card mt-1 ml-1">
+    <li class="border border px-2 list-group-item bg-white d-flex flex-direction-column justify-content-between"
+      onclick="app.postsController.setPost('${this._id}')">
+      <h2 class="align-self-center">${this.category.substring(0,3).toUpperCase()} |</h2>
+      <div class="d-flex flex-column text-center">
+        <h5 class="float-left">${this.title}</h5>
+        <h6 class="font-italic float-right">${this.creatorEmail}</h6>
+      </div>
+      <div class="align-self-center">
+        <span >${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true"></i>
+          ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true"></i></span>
+      </div>
+    </li>
+  </div>
     `
   }
 
