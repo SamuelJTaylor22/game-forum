@@ -35,7 +35,7 @@ export default class PostsController {
   addPost(event) {
     event.preventDefault()
     let e = event.target
-    let rawPost = {title: e.title.value, body: e.body.value, imgUrl:e.imgUrl.value, category: e.category.value}
+    let rawPost = {title: e.title.value, body: e.body.value, img:e.imgUrl.value, category: e.category.value}
     
     try {
       postsService.addPost(rawPost)
@@ -46,7 +46,7 @@ export default class PostsController {
   }
 
   setPost(id){
-    debugger
+    
     postsService.setPost(id)
   }
 
