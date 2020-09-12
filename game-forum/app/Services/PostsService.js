@@ -8,22 +8,22 @@ class PostsService {
     let found = ProxyState.posts.find(p => p._id = id)
     
     if(bool){
-        if(!found.upvote.find(u => ProxyState.user.email)){
+        if(!found.upvote.find(u => u == ProxyState.user.email)){
           found.upvote.push(ProxyState.user.email)
           await api.put(`api/posts/${id}`, found)
         }
         else{
-          let index = found.upvote.findIndex(u => ProxyState.user.email)
+          let index = found.upvote.findIndex(u => u == ProxyState.user.email)
           found.upvote.splice(index, 1)
         }
     }
     else{
-      if(!found.downvote.find(u => ProxyState.user.email)){
+      if(!found.downvote.find(u => u == ProxyState.user.email)){
         found.downvote.push(ProxyState.user.email)
         await api.put(`api/posts/${id}`, found)
       }
       else{
-        let index = found.downvote.findIndex(u => ProxyState.user.email)
+        let index = found.downvote.findIndex(u => u == ProxyState.user.email)
         found.downvote.splice(index, 1)
       }
   }
