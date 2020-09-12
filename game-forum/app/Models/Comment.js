@@ -10,7 +10,7 @@ export default class Comment {
 
   get Template() {
     return `
-      <h1 class="border border-primary">${this.creatorEmail} | ${this.body} | <span>${this.upvotes} <i class="fa fa-arrow-up" aria-hidden="true"></i>  ${this.downvotes} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
+      <h1 class="border border-primary">${this.creatorEmail} | ${this.body} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true"></i>  ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
     `
   }
 
