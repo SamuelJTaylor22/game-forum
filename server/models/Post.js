@@ -7,7 +7,7 @@ const Post = new Schema(
     title: { type: String, required: true },
     body: { type: String, required: true, default: "No body" },
     creatorEmail: { type: String, required: true },
-    img: { type: String, required: false, default: "//placehold.it/200x200" },
+    img: { type: String, },
     upvote: [{ type: String}],
     downvote: [{ type: String}],
     category: { type: String, required: true, enum:["raid", "dngn", "pvp", "quest","farm","lore","misc"], default: "misc" }
@@ -23,3 +23,6 @@ Post.virtual("creator", {
 });
 
 export default Post;
+
+
+// default: "//placehold.it/200x200" 
