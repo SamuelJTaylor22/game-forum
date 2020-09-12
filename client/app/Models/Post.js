@@ -16,7 +16,7 @@ export default class Post {
   get Template() {
     return `
     <div class="card mt-1 ml-1">
-    <li class="border border-primary px-2 list-group-item bg-white d-flex flex-direction-column justify-content-between" onclick="app.postsController.setPost('${this._id}')"><h2>${this.category.toUpperCase()}|</h2> <h6 class="align-self-center"> ${this.creatorEmail} | ${this.title}  </h6><span class="align-self-center">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></li>
+    <li class="border border-primary px-2 list-group-item bg-white d-flex flex-direction-column justify-content-between" onclick="app.postsController.setPost('${this._id}')"><h2>${this.category.toUpperCase()}|</h2> <h6 class="align-self-center"> ${this.creatorEmail} | ${this.title}  </h6><span class="align-self-center">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true"></i> ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></li>
     </div>
     `
   }
@@ -25,7 +25,7 @@ export default class Post {
     return `
     <div class="card bg-swhite shadow m-3">
         <div class="card-body">
-          <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h4>
+          <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> |${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h4>
           <img class="card-img" src="${this.img}" alt="" style="">
           <p class="card-text">${this.body}</p>
           <button type="button" class="btn btn-syellow" onclick="app.postsController.deletePost('${this._id}')">Delete Post</button>
