@@ -10729,5 +10729,16 @@ main {
   background-color: var(--darkblue);
 }
 
+.text-swhite{
+  color: var(--swhite)
+}
+
+.btn-darkblue{
+  color: var(--swhite);
+  background-color: var(--darkblue);
+  border-color: var(--slyellow);
+}
+
+
 
 /*# sourceMappingURL=main.css.map */
