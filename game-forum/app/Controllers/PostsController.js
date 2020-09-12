@@ -14,8 +14,8 @@ function _draw() {
 function _drawActive() {
   let ap = ProxyState.activePost
   let template = ''
-  if(ap){
-  template = ap.activeTemplate
+  if (ap) {
+    template = ap.activeTemplate
   }
   document.getElementById("activePost").innerHTML = template
 }
@@ -26,17 +26,17 @@ export default class PostsController {
     ProxyState.on("posts", _draw);
     ProxyState.on("activePost", _drawActive);
     this.getPosts()
-   AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, ()=>{
-    console.log(ProxyState.posts)
-   })
-    
+    AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, () => {
+      console.log(ProxyState.posts)
+    })
+
   }
 
   addPost(event) {
     event.preventDefault()
     let e = event.target
-    let rawPost = {title: e.title.value, body: e.body.value, imgUrl:e.imgUrl.value, category: e.category.value}
-    
+    let rawPost = { title: e.title.value, body: e.body.value, imgUrl: e.imgUrl.value, category: e.category.value }
+
     try {
       postsService.addPost(rawPost)
     } catch (error) {
@@ -45,11 +45,11 @@ export default class PostsController {
     e.reset()
   }
 
-  setPost(id){
+  setPost(id) {
     postsService.setPost(id)
   }
 
-  getPosts(){
+  getPosts() {
     try {
       postsService.getPosts()
     } catch (error) {
@@ -57,7 +57,7 @@ export default class PostsController {
     }
   }
 
-  deletePost(id){
+  deletePost(id) {
     try {
       postsService.deletePost(id)
     } catch (error) {
@@ -66,13 +66,21 @@ export default class PostsController {
 
   }
 
-  vote(bool, id){
+  vote(bool, id) {
     window.event.stopPropagation()
     console.log("you voted");
     try {
       postsService.vote(bool, id)
     } catch (error) {
-      
+
+    }
+  }
+
+  sortByUpvote() {
+    try {
+      postsService.sortByUpvote()
+    } catch (error) {
+      console.error(error)
     }
   }
 }

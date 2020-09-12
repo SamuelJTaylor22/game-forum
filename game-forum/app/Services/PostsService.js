@@ -6,32 +6,32 @@ import { commentsService } from "./CommentsService.js";
 class PostsService {
   async vote(bool, id) {
     let found = ProxyState.posts.find(p => p._id = id)
-    
-    if(bool){
-        if(!found.upvote.find(u => u == ProxyState.user.email)){
-          found.upvote.push(ProxyState.user.email)
-          await api.put(`api/posts/${id}`, found)
-        }
-        else{
-          let index = found.upvote.findIndex(u => u == ProxyState.user.email)
-          found.upvote.splice(index, 1)
-          await api.put(`api/posts/${id}`, found)
-        }
+
+    if (bool) {
+      if (!found.upvote.find(u => u == ProxyState.user.email)) {
+        found.upvote.push(ProxyState.user.email)
+        await api.put(`api/posts/${id}`, found)
+      }
+      else {
+        let index = found.upvote.findIndex(u => u == ProxyState.user.email)
+        found.upvote.splice(index, 1)
+        await api.put(`api/posts/${id}`, found)
+      }
     }
-    else{
-      if(!found.downvote.find(u => u == ProxyState.user.email)){
+    else {
+      if (!found.downvote.find(u => u == ProxyState.user.email)) {
         found.downvote.push(ProxyState.user.email)
         await api.put(`api/posts/${id}`, found)
       }
-      else{
+      else {
         let index = found.downvote.findIndex(u => u == ProxyState.user.email)
         found.downvote.splice(index, 1)
         await api.put(`api/posts/${id}`, found)
       }
-  }
-  console.log(found)
-  ProxyState.posts = ProxyState.posts
-  ProxyState.activePost = ProxyState.activePost
+    }
+    console.log(found)
+    ProxyState.posts = ProxyState.posts
+    ProxyState.activePost = ProxyState.activePost
   }
   async deletePost(id) {
     console.log(id);
@@ -55,6 +55,11 @@ class PostsService {
     rawPost.user = ProxyState.user.email
     await api.post("api/posts", rawPost)
     this.getPosts()
+  }
+
+  sortByUpvote() {
+    ProxyState.posts.sort((a, b) => ((a.upvote.length - a.downvote.length) > (b.upvote.length - b.downvote.length)) ? 1 : -1)
+    console.log(ProxyState.posts)
   }
 }
 
