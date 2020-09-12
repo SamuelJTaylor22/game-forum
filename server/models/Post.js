@@ -10,7 +10,8 @@ const Post = new Schema(
     img: { type: String, },
     upvote: [{ type: String}],
     downvote: [{ type: String}],
-    category: { type: String, required: true, enum:["raid", "dngn", "pvp", "quest","farm","lore","misc"], default: "misc" }
+    category: { type: String, required: true, enum:["raid", "dngn", "pvp", "quest","farm","lore","misc"], default: "misc" },
+    display: { type: Boolean, required: true, defualt: true}
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );
