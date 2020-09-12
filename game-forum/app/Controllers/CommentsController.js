@@ -65,4 +65,14 @@ export default class CommentsController {
       console.error(error)
     }
   }
+
+  vote(bool, cId) {
+    window.event.stopPropagation()
+    console.log("you voted");
+    try {
+      commentsService.vote(bool, cId)
+    } catch (error) {
+
+    }
+  }
 }

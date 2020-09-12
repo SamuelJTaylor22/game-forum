@@ -24,6 +24,7 @@
 
 
         <div>
+<<<<<<< HEAD
           <button onclick="app.postsController.filterCategorys('raid')"
             class="btn btn-primary bg-dark">category</button>
           <button onclick="app.postsController.filterCategorys('dngn')"
@@ -37,6 +38,15 @@
             class="btn btn-primary bg-dark">category</button>
           <button onclick="app.postsController.filterCategorys('misc')"
             class="btn btn-primary bg-dark">category</button>
+=======
+          <button onclick="app.postsController.filterCategorys('raid')" class="btn btn-primary bg-dark">Raid</button>
+          <button onclick="app.postsController.filterCategorys('dngn')" class="btn btn-primary bg-dark">Dungeon</button>
+          <button onclick="app.postsController.filterCategorys('pvp')" class="btn btn-primary bg-dark">PvP</button>
+          <button onclick="app.postsController.filterCategorys('quest')" class="btn btn-primary bg-dark">Quest</button>
+          <button onclick="app.postsController.filterCategorys('farm')" class="btn btn-primary bg-dark">Farm</button>
+          <button onclick="app.postsController.filterCategorys('lore')" class="btn btn-primary bg-dark">Lore</button>
+          <button onclick="app.postsController.filterCategorys('misc')" class="btn btn-primary bg-dark">Misc</button>
+>>>>>>> a251309ee75851f901c5d8cf28c89b7bee2884d7
         </div>
 
 
@@ -54,6 +64,7 @@
           <ul class="col-12 list-group text-wrap scrollbox" id="postList">
 
           </ul>
+<<<<<<< HEAD
         </div>
 
         <div class="row">
@@ -61,6 +72,8 @@
             <button class="btn btn-success" onclick="app.postsController.sortByDownvote()">Toggle Sort</button>
             <!-- Needs function for Sort Toggle -->
           </div>
+=======
+>>>>>>> a251309ee75851f901c5d8cf28c89b7bee2884d7
         </div>
 
         <div class="row">
@@ -71,29 +84,6 @@
         </div>
       </div>
       <div class="col-6">
-        <form class="row" onsubmit="app.postsController.addPost(event)">
-          <label for="newPost">
-            <h2>New Post</h2>
-          </label>
-          <input type="text" name="title" id="title" class="form-control" placeholder="Title..."
-            aria-describedby="helpId">
-          <input type="text" name="body" id="body" class="form-control" placeholder="Body..." aria-describedby="helpId">
-          <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Image URL"
-            aria-describedby="helpId">
-          <select class="form-control" name="category" id="category">
-            <option value="raid">Raid</option>
-            <option value="dngn">Dungeon</option>
-            <option value="pvp">PvP</option>
-            <option value="quest">Quest</option>
-            <option value="farm">Farm/Collect</option>
-            <option value="lore">Lore</option>
-            <option value="misc">Misc</option>
-          </select>
-          <button type="submit" class="btn btn-success form-control">Submit!</button>
-        </form>
-        <div class="scrollbox-small" id="activePost"></div>
-      </div>
-      <div class="col-6 scrollbox">
         <form class="row" onsubmit="app.postsController.addPost(event)">
           <label for="newPost">
             <h1>New Post</h1>
@@ -114,7 +104,7 @@
           </select>
           <button type="submit" class="btn btn-success form-control">Submit!</button>
         </form>
-        <div id="activePost"></div>
+        <div class="scrollbox-small" id="activePost"></div>
       </div>
     </div>
     </div>
