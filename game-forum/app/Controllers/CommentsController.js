@@ -8,7 +8,8 @@ function _draw() {
   let comments = ProxyState.comments
   let template = ''
   comments.forEach(c => template += c.Template)
-  document.getElementById("comments").innerHTML = template
+  if(ProxyState.activePost)
+  {document.getElementById("comments").innerHTML = template}
 }
 
 //Public

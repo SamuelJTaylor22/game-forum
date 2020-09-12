@@ -31,41 +31,45 @@
   </header>
   <main class="container-fluid">
     <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <ul class="col-12 list-group text-wrap scrollbox" id="postList">
-                        
-                    </ul>
-                </div>
-                
-                <div class="row">
-                    <div class="col-12 text-center py-1">
-                        <button class="btn btn-success" onclick="">Toggle Sort</button>
-                        <!-- Needs function for Sort Toggle -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 scrollbox">
-                <form class="row" onsubmit="app.postsController.addPost(event)">
-                        <label for="newPost"><h1>New Post</h1></label>
-                        <input type="text" name="title" id="title" class="form-control" placeholder="Title..." aria-describedby="helpId">
-                        <input type="text" name="body" id="body" class="form-control" placeholder="Body..." aria-describedby="helpId">
-                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Image URL" aria-describedby="helpId">
-                        <select class="form-control" name="category" id="category">
-                            <option value ="raid">Raid</option>
-                            <option value ="dngn">Dungeon</option>
-                            <option value ="pvp">PvP</option>
-                            <option value ="quest">Quest</option>
-                            <option value ="farm">Farm/Collect</option>
-                            <option value ="lore">Lore</option>
-                            <option value ="misc">Misc</option>
-                        </select>
-                    <button type="submit" class="btn btn-success form-control">Submit!</button>
-                </form>
-                <div id="activePost"></div>
-            </div>
+      <div class="col-6">
+        <div class="row">
+          <ul class="col-12 list-group text-wrap scrollbox" id="postList">
+
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center py-1">
+            <button class="btn btn-success" onclick="app.postsController.sort()">Toggle Sort</button>
+            <!-- Needs function for Sort Toggle -->
+          </div>
         </div>
       </div>
+      <div class="col-6 scrollbox">
+        <form class="row" onsubmit="app.postsController.addPost(event)">
+          <label for="newPost">
+            <h1>New Post</h1>
+          </label>
+          <input type="text" name="title" id="title" class="form-control" placeholder="Title..."
+            aria-describedby="helpId">
+          <input type="text" name="body" id="body" class="form-control" placeholder="Body..." aria-describedby="helpId">
+          <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Image URL"
+            aria-describedby="helpId">
+          <select class="form-control" name="category" id="category">
+            <option value="raid">Raid</option>
+            <option value="dngn">Dungeon</option>
+            <option value="pvp">PvP</option>
+            <option value="quest">Quest</option>
+            <option value="farm">Farm/Collect</option>
+            <option value="lore">Lore</option>
+            <option value="misc">Misc</option>
+          </select>
+          <button type="submit" class="btn btn-success form-control">Submit!</button>
+        </form>
+        <div id="activePost"></div>
+      </div>
+    </div>
+    </div>
     </div>
   </main>
   <footer class="container-fluid bg-dark text-light">
