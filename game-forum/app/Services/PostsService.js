@@ -39,7 +39,8 @@ class PostsService {
     console.log(res)
     ProxyState.activePost = null
     ProxyState.comments = []
-    this.getPosts()
+    let found = ProxyState.posts.findIndex(p => p._id == id)
+    ProxyState.posts = ProxyState.posts.splice(found, 1)
   }
   async getPosts() {
     let res = await api.get("api/posts")
