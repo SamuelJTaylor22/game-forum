@@ -12,7 +12,7 @@ export default class Comment {
   get Template() {
     return `
       <h1 class="border border-primary">${this.creatorEmail} | ${this.body} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.commentsController.vote(true, '${this._id}')"></i>  ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.commentsController.vote(false, '${this._id}')"></i></span></h1>
-      <button type="button" class="btn btn-danger mb-2" onclick="app.commentsController.deleteComment('${this._id}')">Delete Comment</button>
+      <button type="button" class="btn btn-slyellow mb-2" onclick="app.commentsController.deleteComment('${this._id}')">Delete Comment</button>
     `
   }
 
