@@ -6,27 +6,31 @@ import { commentsService } from "./CommentsService.js";
 class PostsService {
   async vote(bool, id) {
     let found = ProxyState.posts.find(p => p._id = id)
-    console.log(found)
+    
     if(bool){
-        if(!found.upvotes.find(u => ProxyState.user.email)){
-          found.upvotes.push(ProxyState.user.email)
+        if(!found.upvote.find(u => u == ProxyState.user.email)){
+          found.upvote.push(ProxyState.user.email)
           await api.put(`api/posts/${id}`, found)
         }
         else{
-          let index = found.upvotes.findIndex(u => ProxyState.user.email)
-          found.upvotes.splice(index, 1)
+          let index = found.upvote.findIndex(u => u == ProxyState.user.email)
+          found.upvote.splice(index, 1)
+          await api.put(`api/posts/${id}`, found)
         }
     }
     else{
-      if(!found.downvotes.find(u => ProxyState.user.email)){
-        found.downvotes.push(ProxyState.user.email)
+      if(!found.downvote.find(u => u == ProxyState.user.email)){
+        found.downvote.push(ProxyState.user.email)
         await api.put(`api/posts/${id}`, found)
       }
       else{
-        let index = found.downvotes.findIndex(u => ProxyState.user.email)
-        found.downvotes.splice(index, 1)
+        let index = found.downvote.findIndex(u => u == ProxyState.user.email)
+        found.downvote.splice(index, 1)
+        await api.put(`api/posts/${id}`, found)
       }
   }
+  console.log(found)
+  ProxyState.posts = ProxyState.posts
   }
   async deletePost(id) {
     console.log(id);

@@ -8,8 +8,8 @@ const Post = new Schema(
     body: { type: String, required: true, default: "No body" },
     creatorEmail: { type: String, required: true },
     img: { type: String, required: false, default: "//placehold.it/200x200" },
-    upvote: { type: Array, required: false, default: [] },
-    downvote: { type: Array, required: false, default: [] },
+    upvote: [{ type: String}],
+    downvote: [{ type: String}],
     category: { type: String, required: true, enum:["raid", "dngn", "pvp", "quest","farm","lore","misc"], default: "misc" }
   },
   { timestamps: true, toJSON: { virtuals: true } }

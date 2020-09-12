@@ -67,6 +67,7 @@ export default class PostsController {
   }
 
   vote(bool, id){
+    window.event.stopPropagation()
     console.log("you voted");
     try {
       postsService.vote(bool, id)
