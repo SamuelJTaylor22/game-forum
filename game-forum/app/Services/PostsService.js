@@ -6,7 +6,7 @@ import { commentsService } from "./CommentsService.js";
 class PostsService {
   async vote(bool, id) {
     let found = ProxyState.posts.find(p => p._id == id)
-
+    
     if (bool) {
       if (!found.upvote.find(u => u == ProxyState.user.email)) {
         found.upvote.push(ProxyState.user.email)
@@ -58,15 +58,22 @@ class PostsService {
     await api.post("api/posts", rawPost)
     this.getPosts()
   }
-
+  
   async sortByUpvote() {
     await ProxyState.posts.sort((a, b) => ((a.upvote.length - a.downvote.length) > (b.upvote.length - b.downvote.length)) ? -1 : 1)
     ProxyState.posts = ProxyState.posts
     console.log(ProxyState.posts)
   }
-
+  
   sort() {
     ProxyState.posts.reverse()
+    ProxyState.posts = ProxyState.posts
+  }
+  filterCategorys(category) {
+    let active = ProxyState.posts.find(p=> p.category == category)
+    if (active.display) {
+      active.display = false
+    }else active.display =true
     ProxyState.posts = ProxyState.posts
   }
 }
