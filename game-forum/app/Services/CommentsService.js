@@ -33,9 +33,8 @@ class CommentsService {
   }
   async deleteComment(id) {
     console.log(id);
-    let res = await api.delete(`api/posts/${id}`)
+    let res = await api.delete(`api/comments/${id}`)
     console.log(res)
-    ProxyState.activePost = null
     this.getComments()
   }
 
