@@ -10704,11 +10704,11 @@ main {
 }
 
 .fa.fa-arrow-down{
-  color: red;
+  color: var(--syellow);
 }
 
  .fa.fa-arrow-up{
-  color: forestgreen;
+  color: var(--blue);
 }
 
 .scrollbox {
@@ -10777,5 +10777,12 @@ main {
                                        color-stop(0.72, rgb(29,133,213)),
                                        color-stop(0.86, rgb(24,52,78)));
 }
+
+.btn-blue{
+  color: var(--swhite);
+  background-color: var(--blue);
+  border-color: var(--darkblue);
+}
+
 
 /*# sourceMappingURL=main.css.map */
