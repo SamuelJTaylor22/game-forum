@@ -8,8 +8,7 @@ function _draw() {
   let comments = ProxyState.comments
   let template = ''
   comments.forEach(c => template += c.Template)
-  if(ProxyState.activePost)
-  {document.getElementById("comments").innerHTML = template}
+  if (ProxyState.activePost) { document.getElementById("comments").innerHTML = template }
 }
 
 //Public
@@ -49,5 +48,21 @@ export default class CommentsController {
       console.error(error);
     }
 
+  }
+
+  sortbyUpvote() {
+    try {
+      commentsService.sortByUpvote()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  sortByDownvote() {
+    try {
+      commentsService.sortByDownvote()
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
