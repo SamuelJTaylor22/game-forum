@@ -2,15 +2,15 @@ export default class Comment {
 
   constructor(data) {
     this.post = data.post
-    this.user = data.user
+    this.creatorEmail = data.creatorEmail
     this.body = data.body
-    this.upvotes = data.upvotes || 0
-    this.downvotes = data.downvotes || 0
+    this.upvote = data.upvote || []
+    this.downvote = data.downvote || []
   }
 
   get Template() {
     return `
-      <h1>${this.body}</h1>
+      <h1 class="border border-primary">${this.creatorEmail} | ${this.body} | <span>${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true"></i>  ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true"></i></span></h1>
     `
   }
 
