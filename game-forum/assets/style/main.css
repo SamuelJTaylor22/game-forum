@@ -10704,11 +10704,11 @@ main {
 }
 
 .fa.fa-arrow-down{
-  color: red;
+  color: var(--syellow);
 }
 
  .fa.fa-arrow-up{
-  color: forestgreen;
+  color: var(--blue);
 }
 
 .scrollbox {
@@ -10722,9 +10722,44 @@ main {
   height: 68vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
 
 .bg-darkblue{
   background-color: var(--darkblue);
-
 }
+
+.text-swhite{
+  color: var(--swhite)
+}
+
+.btn-darkblue{
+  color: var(--swhite);
+  background-color: var(--darkblue);
+  border-color: var(--slyellow);
+}
+
+.btn-syellow{
+  color: var(--swhite);
+  background-color: var(--syellow);
+  border-color: var(--darkblue);
+}
+
+.bg-swhite{
+  background-color: var(--swhite);
+}
+
+.btn-slyellow{
+  color: var(--darkblue);
+  background-color: var(--slyellow);
+  border-color: var(--darkblue);
+}
+
+.btn-blue{
+  color: var(--swhite);
+  background-color: var(--blue);
+  border-color: var(--darkblue);
+}
+
+
 /*# sourceMappingURL=main.css.map */
