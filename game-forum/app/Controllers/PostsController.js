@@ -5,15 +5,13 @@ import { postsService } from "../Services/PostsService.js";
 
 //Private
 function _draw() {
-  let activeposts = []
   let template = ''
   for (let i = 0; i < ProxyState.posts.length; i++) {
     const post = ProxyState.posts[i];
     if (post.display == true) {
-      activeposts.push(post)
+      template += post.Template
     }
   }
-  activeposts.forEach(p => template += p.Template)
   document.getElementById("postList").innerHTML = template
 }
 

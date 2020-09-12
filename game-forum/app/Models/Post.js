@@ -9,7 +9,7 @@ export default class Post {
     this.upvote = data.upvote || []
     this.downvote = data.downvote || []
     this._id = data._id
-    this.display = true
+    this.display = data.display
   }
 
 
@@ -37,7 +37,7 @@ export default class Post {
         </form>
         </div>
         <div class="text-center my-2">
-          <button class="btn btn-success" onclick="" style="width: 15%">Comment Sort</button>
+          <button class="btn btn-success" onclick="app.commentsController.sortByDownvotes()" style="width: 15%">Comment Sort</button>
         </div>
         <ul id="comments">
         </ul>
