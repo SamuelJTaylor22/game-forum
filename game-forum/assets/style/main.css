@@ -10739,6 +10739,13 @@ main {
   border-color: var(--slyellow);
 }
 
+.btn-syellow{
+  color: var(--swhite);
+  background-color: var(--syellow);
+  border-color: var(--slyellow);
+}
 
-
+.bg-swhite{
+  background-color: var(--swhite);
+}
 /*# sourceMappingURL=main.css.map */

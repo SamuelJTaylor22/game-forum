@@ -22,7 +22,7 @@ export default class Post {
 
   get activeTemplate() {
     return `
-    <div class="card">
+    <div class="card bg-swhite">
         <div class="card-body">
           <h4 class="card-title">${this.title} | ${this.creatorEmail} | <span class="float-right">${this.upvote.length} <i class="fa fa-arrow-up" aria-hidden="true" onclick="app.postsController.vote(true,'${this._id}')"></i> | ${this.downvote.length} <i class="fa fa-arrow-down" aria-hidden="true" onclick="app.postsController.vote(false,'${this._id}')"></i></span></h4>
           <img class="card-img" src="${this.img}" alt="" style="">
@@ -33,11 +33,11 @@ export default class Post {
             <input type="text" name="comment" id="comment" class="ml-1 form-control" placeholder="Leave comment..."
               aria-describedby="helpId">
           </div>
-          <button type="submit" class="btn btn-warning form-control ml-2"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Comment</button>
+          <button type="submit" class="btn btn-syellow form-control ml-2"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Comment</button>
         </form>
         </div>
         <div class="text-center my-2">
-          <button class="btn btn-success" onclick="" style="width: 15%">Comment Sort</button>
+          <button class="btn btn-darkblue" onclick="" style="width: 15%">Comment Sort</button>
         </div>
         <ul id="comments">
         </ul>
