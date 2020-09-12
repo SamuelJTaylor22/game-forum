@@ -6,7 +6,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --blue: blue;
+  --darkblue: #18344E;
+  --blue: #1d84b5;
+  --syellow: #FFBC42;
+  --slyellow: #FFCD70;
+  --swhite: #E9F1F7;
   --indigo: indigo;
   --purple: purple;
   --pink: pink;
@@ -10713,9 +10717,14 @@ main {
   overflow-x: hidden;
 }
 
+
 .scrollbox-small{
   height: 68vh;
   overflow-y: scroll;
   overflow-x: hidden;
+
+.bg-darkblue{
+  background-color: var(--darkblue);
+
 }
 /*# sourceMappingURL=main.css.map */
