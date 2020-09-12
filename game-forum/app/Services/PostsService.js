@@ -15,6 +15,7 @@ class PostsService {
         else{
           let index = found.upvote.findIndex(u => u == ProxyState.user.email)
           found.upvote.splice(index, 1)
+          await api.put(`api/posts/${id}`, found)
         }
     }
     else{
@@ -25,6 +26,7 @@ class PostsService {
       else{
         let index = found.downvote.findIndex(u => u == ProxyState.user.email)
         found.downvote.splice(index, 1)
+        await api.put(`api/posts/${id}`, found)
       }
   }
   console.log(found)
