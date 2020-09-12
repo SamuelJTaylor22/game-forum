@@ -27,9 +27,7 @@ export default class PostsController {
     ProxyState.on("activePost", _drawActive);
     this.getPosts()
     AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, () => {
-      console.log(ProxyState.posts)
     })
-
   }
 
   addPost(event) {
@@ -79,6 +77,14 @@ export default class PostsController {
   sortByUpvote() {
     try {
       postsService.sortByUpvote()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  sort() {
+    try {
+      postsService.sort()
     } catch (error) {
       console.error(error)
     }

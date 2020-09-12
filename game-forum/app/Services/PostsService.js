@@ -45,6 +45,7 @@ class PostsService {
     let res = await api.get("api/posts")
     // @ts-ignore
     ProxyState.posts = res.data.map(p => new Post(p))
+    this.sortByUpvote()
   }
   setPost(id) {
     let foundpost = ProxyState.posts.find(p => p.title == id)
@@ -57,9 +58,15 @@ class PostsService {
     this.getPosts()
   }
 
-  sortByUpvote() {
-    ProxyState.posts.sort((a, b) => ((a.upvote.length - a.downvote.length) > (b.upvote.length - b.downvote.length)) ? 1 : -1)
+  async sortByUpvote() {
+    await ProxyState.posts.sort((a, b) => ((a.upvote.length - a.downvote.length) > (b.upvote.length - b.downvote.length)) ? -1 : 1)
+    ProxyState.posts = ProxyState.posts
     console.log(ProxyState.posts)
+  }
+
+  sort() {
+    ProxyState.posts.reverse()
+    ProxyState.posts = ProxyState.posts
   }
 }
 
