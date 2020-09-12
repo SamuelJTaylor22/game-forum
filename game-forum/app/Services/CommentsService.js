@@ -57,7 +57,7 @@ class CommentsService {
   }
 
   async sortByDownvote() {
-    await ProxyState.comments.reverse()
+    await ProxyState.comments.sort((a, b) => ((a.upvote.length - a.downvote.length) < (b.upvote.length - b.downvote.length)) ? 1 : -1)
     ProxyState.comments = ProxyState.comments
   }
 }
