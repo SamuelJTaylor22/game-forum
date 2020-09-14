@@ -50,7 +50,7 @@ export default class Post {
     </div>
     <div class="card-body">
     <div class="justify-self-center d-flex">
-    <img  src="${this.img}" alt="" style="">
+    <img class="img-fluid"  src="${this.img}" alt="" style="">
   
 </div>
       <p class="card-text">${this.body}</p>
