@@ -31,6 +31,7 @@ export default class CommentsController {
     } catch (error) {
       console.error(error)
     }
+    form.reset()
   }
 
   getComments() {
