@@ -72,9 +72,10 @@ class PostsService {
   }
   filterCategorys(category) {
     let active = ProxyState.posts.find(p => p.category == category)
-    if (active.display) {
-      active.display = false
-    } else active.display = true
+    active.display = !active.display
+    // if (active.display) {
+    //   active.display = false
+    // } else active.display = true
     ProxyState.posts = ProxyState.posts
   }
 }
